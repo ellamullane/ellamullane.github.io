@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ella Mullane | Marketing & Professional Selling</title>
+  <meta name="description" content="Portfolio of Ella Mullane, a Rutgers Business School marketing student pursuing a career in medical device sales.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #1B2A41;
+      --teal: #2A7F84;
+      --teal-soft: #E3F0F0;
+      --paper: #F7F9FA;
+      --text: #1E2430;
+      --muted: #5B6675;
+      --rule: #D8E0E6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--text);
+      font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 44rem;
+      margin: 0 auto;
+      padding: 4rem 1.5rem 3rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: flex;
+      gap: 1.75rem;
+      align-items: center;
+      padding-bottom: 2.5rem;
+      border-bottom: 4px solid var(--ink);
+    }
+
+    .avatar {
+      position: relative;
+      flex-shrink: 0;
+      width: 7rem;
+      height: 7rem;
+      border-radius: 50%;
+      background: var(--ink);
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      margin: 0 0 0.25rem;
+      font-size: clamp(2.25rem, 6vw, 3.25rem);
+      line-height: 1.05;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    .role {
+      margin: 0;
+      color: var(--teal);
+      font-weight: 600;
+    }
+
+    .statement {
+      margin: 2rem 0 0;
+      font-size: 1.375rem;
+      line-height: 1.45;
+      color: var(--ink);
+      max-width: 36rem;
+    }
+
+    /* Sections */
+    section { margin-top: 3.5rem; }
+
+    h2 {
+      margin: 0 0 1.25rem;
+      font-size: 1.5rem;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    /* Skills */
+    .skill-group + .skill-group { margin-top: 1.5rem; }
+
+    .skills {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .skills li {
+      padding: 0.4rem 0.85rem;
+      background: var(--teal-soft);
+      color: var(--ink);
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    /* Projects */
+    .project {
+      padding: 1.75rem 0;
+      border-top: 1px solid var(--rule);
+    }
+
+    .project:last-child { border-bottom: 1px solid var(--rule); }
+
+    .project h3 {
+      margin: 0;
+      font-size: 1.25rem;
+      color: var(--ink);
+    }
+
+    .context {
+      margin: 0.2rem 0 0.9rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project p.desc { margin: 0 0 1.1rem; }
+
+    .button {
+      display: inline-block;
+      padding: 0.6rem 1.1rem;
+      background: var(--ink);
+      color: #FFFFFF;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .button:hover { background: var(--teal); }
+
+    a:focus-visible {
+      outline: 3px solid var(--teal);
+      outline-offset: 3px;
+    }
+
+    footer {
+      margin-top: 3rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 540px) {
+      .page { padding-top: 2.5rem; }
+      .hero { flex-direction: column; align-items: flex-start; }
+      .avatar { width: 5.5rem; height: 5.5rem; font-size: 1.6rem; }
+      .statement { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+
+    <header>
+      <div class="hero">
+        <div class="avatar" aria-hidden="true">
+          EM
+          <!-- Upload a photo named headshot.jpg to show it here. Until then, the initials display. -->
+          <img src="headshot.jpg" alt="" onerror="this.remove()">
+        </div>
+        <div>
+          <h1>Ella Mullane</h1>
+          <p class="role">Marketing & Professional Selling, Rutgers Business School</p>
+        </div>
+      </div>
+      <p class="statement">I'm a junior at Rutgers Business School studying Marketing with a concentration in Professional Selling, and I'm driven to build a career in medical device sales.</p>
+    </header>
+
+    <section aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Skills</h2>
+
+      <div class="skill-group">
+        <h3>Professional</h3>
+        <ul class="skills">
+          <li>Team Management</li>
+          <li>Customer Relationship Management</li>
+          <li>Persuasive Communication</li>
+          <li>Critical Thinking</li>
+          <li>Mentorship</li>
+          <li>Adaptability in Fast-Paced Environments</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <h3>Technical</h3>
+        <ul class="skills">
+          <li>Microsoft PowerPoint (Professional Sales Presentations)</li>
+          <li>Microsoft Word (Business Documentation)</li>
+          <li>Microsoft Excel (Advanced Functions)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+
+      <article class="project">
+        <h3>Beginner's Guide to Guitar</h3>
+        <p class="context">Class project, built with Google Sites</p>
+        <p class="desc">Walking into a music store as a beginner can be overwhelming, with dozens of guitars, confusing terminology, and no clear place to start. I designed and built a website that takes new players from zero to their first song. The site covers the basics of how a guitar works, practical tips for building good habits early, a curated list of the easiest songs to learn, and a buyer's guide for choosing the right guitar for your budget and style. The project challenged me to break complex information into simple, approachable steps, the same skill I use to explain products clearly to customers.</p>
+        <a class="button" href="https://sites.google.com/view/ella-mullane/home" target="_blank" rel="noopener">View the website</a>
+      </article>
+
+      <article class="project">
+        <h3>Musical Instrument Rental Calculator</h3>
+        <p class="context">Class project, built with HTML, CSS, and JavaScript</p>
+        <p class="desc">Pricing a rental sounds simple until you add optional services, subscription tiers, and discounts that all interact. I coded an interactive web application that calculates the full cost of renting a flute or clarinet. Users choose an instrument, enter a rental length, and select add-ons like monthly cleaning and a Green or Blue subscription plan. The program then applies long-term rental discounts and subscription savings, adds 7% sales tax, and displays a clear breakdown of the total price, discounts, tax, and final cost. Building it taught me to think through pricing logic step by step, which helps me explain value and cost to customers with confidence.</p>
+        <a class="button" href="instrument-rental.html">Try the calculator</a>
+      </article>
+    </section>
+
+    <footer>
+      <p>&copy; 2026 Ella Mullane</p>
+    </footer>
+
+  </main>
+</body>
+</html>
