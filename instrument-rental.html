@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--Ella Mullane Section 29-->
+    <!--On my honor, I have neither recieved nor given any unauthorized assistance on this assignment.-->
+<title>Instrument Rental</title>
+        <style>
+             body {
+            background-color: rgb(228, 115, 115);
+            font-family: Arial, sans-serif;
+            color:rgba(239, 218, 190, 0.738)
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+        }
+        h1 {
+            color:rgb(0, 0, 0)
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Musical Instruments Rental</h1>
+        <h2>Inputs</h2>
+        <label>Instrument:</label>
+        <input type="radio" name="instrument" id="flute" onclick='instrumentType="Flute"'> Flute 
+        <input type="radio" name="instrument" id="clarinet" onclick='instrumentType="Clarinet"'> Clarinet <br><br>
+        <label>Number of Months:</label>
+        <input type="number" id="months" min="1"><br><br>
+        
+        <label>Monthly Cleaning:</label>
+        <input type="radio" name="cleaning" id="cleanYes" onclick='cleaning=true'> Yes
+        <input type="radio" name="cleaning" id="cleanNo" onclick='cleaning=false'> No<br><br>
+        
+        <label>Subscription:</label>
+        <input type="radio" name="subscription" id="subYes" onclick='subscription=true'> Yes
+        <input type="radio" name="subscription" id="subNo" onclick='subscription=false'> No<br><br>
+        
+        <label>Subscription Type:</label>
+        <input type="radio" name="subType" id="green" onclick='subType="Green"'> Green
+        <input type="radio" name="subType" id="blue" onclick='subType="Blue"'> Blue<br><br>
+        <button onclick="processRental()">Process</button>
+        <button onclick="clearFields()">Clear</button>
+        <p><a href="index.html">Back to portfolio</a></p>
+        
+        <h2>Outputs</h2>
+        <label>Total Price (Pre-Tax):</label> <input type="text" id="totalPrice" readonly><br>
+        <label>Discounts:</label> <input type="text" id="discount" readonly><br>
+        <label>Sales Tax (7%):</label> <input type="text" id="tax" readonly><br>
+        <label>Final Cost:</label> <input type="text" id="finalCost" readonly><br>
+    <script>
+        let instrumentType = "Flute";
+        let cleaning = false;
+        let subscription = false;
+        let subType = "None";
+        
+        function processRental() {
+            let months = Number(document.getElementById('months').value);
+            let basePrice = (instrumentType === "Flute") ? 50 : 60;
+            let total = months * basePrice + 20;
+            let discountAmount = 0;
+            
+            if (months > 12) {
+                discountAmount += total * 0.10;
+            }
+            
+            if (cleaning) {
+                total += months * 10;
+            }
+            
+            if (subscription) {
+                if (subType === "Green") {
+                    total += 15;
+                    discountAmount += 20;
+                } else if (subType === "Blue") {
+                    total += 25;
+                    discountAmount += total * 0.10;
+                }
+            }
+            
+            let finalPrice = total - discountAmount;
+            let taxAmount = finalPrice * 0.07;
+            let finalAmount = finalPrice + taxAmount;
+            
+            document.getElementById('totalPrice').value = total.toFixed(2);
+            document.getElementById('discount').value = discountAmount.toFixed(2);
+            document.getElementById('tax').value = taxAmount.toFixed(2);
+            document.getElementById('finalCost').value = finalAmount.toFixed(2);
+        }
+        
+        function clearFields() {
+            months.value = "";
+            totalPrice.value = "";
+            discount.value = "";
+            tax.value = "";
+            finalCost.value = "";
+            flute.checked = false;
+            clarinet.checked = false;
+            cleanYes.checked = false;
+            cleanNo.checked = false;
+            subYes.checked = false;
+            subNo.checked = false;
+            green.checked = false;
+            blue.checked = false;
+        }
+    </script>
+    </body>
+</html>
